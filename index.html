@@ -177,7 +177,7 @@
 
 <!-- Trailing Action -->
 
-</div>
+<nav class="hidden md:flex items-center gap-7"><a href="#inicio" class="font-label-mono-sm text-[12px] uppercase tracking-wider text-primary font-medium hover:text-primary transition-colors">Inicio</a><a href="#servicios" class="font-label-mono-sm text-[12px] uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors">Servicios</a><a href="#simulacion" class="font-label-mono-sm text-[12px] uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-secondary animate-ping"></span>Simulación IA</a><a href="#tarifas" class="font-label-mono-sm text-[12px] uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors">Tarifas</a><a href="#metodologia" class="font-label-mono-sm text-[12px] uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors">Metodología</a><a href="#faq" class="font-label-mono-sm text-[12px] uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors">FAQ</a><a href="#contacto" class="font-label-mono-sm text-[12px] uppercase tracking-wider text-on-surface-variant hover:text-on-surface transition-colors">Contacto</a></nav><div class="flex items-center gap-4"><a href="#tarifas" class="hidden lg:inline-flex font-label-mono-sm text-[12px] text-on-surface-variant hover:text-on-surface transition-colors">Ver tarifas</a><a href="#contacto" class="inline-flex items-center justify-center px-4 py-2 rounded-lg bg-primary-container hover:bg-primary-fixed-dim text-on-primary-container font-headline-sm font-semibold text-[13px] tracking-wide transition-all cyber-glow-amber">Solicitar proyecto</a></div></div>
 </header>
 <!-- ================= HERO SECTION ================= -->
 <section class="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden border-b border-outline-variant/20" id="inicio">
@@ -1499,11 +1499,16 @@
     }
 
     // Form Handling
+    // Endpoint de Formspree que envía cada envío del formulario a syntax6info@gmail.com.
+    // Sustituye TU_ID_AQUI por el ID real que te da Formspree (ver instrucciones adjuntas).
+    const FORM_ENDPOINT = 'https://formspree.io/f/xyezojyy';
+
     function handleFormSubmit(e) {
       e.preventDefault();
       
       const form = document.getElementById('project-form');
       const successBlock = document.getElementById('form-success');
+      const submitBtn = form.querySelector('button[type="submit"]');
       
       // Collect selected services
       const selectedServices = Array.from(form.querySelectorAll('input[name="services"]:checked')).map(cb => cb.value);
@@ -1512,6 +1517,37 @@
         return;
       }
 
+      const formData = new FormData(form);
+      // Formspree espera un solo valor "services"; unimos las casillas marcadas en una línea legible.
+      formData.delete('services');
+      formData.append('services', selectedServices.join(', '));
+      formData.append('_subject', 'Nueva solicitud de presupuesto — Syntax6');
+
+      const originalBtnHtml = submitBtn ? submitBtn.innerHTML : '';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = 'Enviando...';
+      }
+
+      fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      })
+        .then(response => {
+          if (!response.ok) throw new Error('form_error');
+          showFormSuccess(form, successBlock);
+        })
+        .catch(() => {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnHtml;
+          }
+          alert('No se ha podido enviar el formulario automáticamente. Por favor, escríbenos directamente a syntax6info@gmail.com con tus datos, o inténtalo de nuevo en unos segundos.');
+        });
+    }
+
+    function showFormSuccess(form, successBlock) {
       // Smooth switch to success state
       form.classList.add('hidden');
       successBlock.classList.remove('hidden');
@@ -1558,6 +1594,10 @@
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') closeLegalModal();
     });
+    function preselectService(name) {
+      const checkboxes = document.querySelectorAll('#services-selector input[type="checkbox"]');
+      checkboxes.forEach(cb => { cb.checked = (cb.value === name); });
+    }
 
     // ===== Preferencias de cookies =====
     const COOKIE_KEY = 'syntax6_cookie_consent';
@@ -1598,6 +1638,11 @@
       if (banner) banner.remove();
       const s = document.getElementById('cookie-pref-status');
       if (s) s.textContent = 'Preferencias guardadas.';
+    }
+    function resetAndShowBanner() {
+      try { localStorage.removeItem(COOKIE_KEY); } catch (e) {}
+      closeLegalModal();
+      location.reload();
     }
 
     // Banner de cookies
@@ -1654,8 +1699,8 @@
 <ul class="legal-list">
 <li><b>Denominación comercial:</b> SYNTAX6 Digital Agency</li>
 <li><b>Titular (nombre o razón social):</b> <span class="ph">[COMPLETAR]</span></li>
-<li><b>NIF/CIF:</b> <span class="ph">[COMPLETAR]</span></li>
-<li><b>Domicilio:</b> <span class="ph">[COMPLETAR: calle, número, CP, Madrid, España]</span></li>
+<li><b>NIF/CIF:</b> <span class="ph">[EN TRÁMITE - completar cuando se asigne]</span></li>
+<li><b>Domicilio:</b> Paseo de la Castellana, Madrid, España <span class="ph">[COMPLETAR: número y CP exactos]</span></li>
 <li><b>Correo electrónico:</b> syntax6info@gmail.com</li>
 <li><b>Teléfono:</b> <span class="ph">[COMPLETAR, recomendado]</span></li>
 <li><b>Registro Mercantil (solo si es sociedad):</b> <span class="ph">[COMPLETAR: tomo, folio, hoja]</span></li>
@@ -1795,6 +1840,10 @@
 </div>
 </div>
 
+</div>
+</div>
+
+</body></html>
 </div>
 </div>
 
