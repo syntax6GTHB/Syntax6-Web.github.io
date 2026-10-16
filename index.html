@@ -401,29 +401,12 @@
 <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
 </button>
 </div>
-<!-- Card 4 -->
-<div class="glass-panel p-8 rounded-xl specular-border flex flex-col justify-between hover:border-primary-container/40 transition-all duration-300 group">
-<div>
-<div class="w-12 h-12 rounded-lg bg-surface-container-high border border-outline-variant/30 flex items-center justify-center text-primary mb-6 group-hover:scale-105 transition-transform">
-<span class="material-symbols-outlined text-[26px]">draw</span>
-</div>
-<span class="font-label-mono-sm text-label-mono-sm text-primary mb-2 block tracking-widest">SERVICIO 04</span>
-<h3 class="font-headline-md text-headline-sm text-on-surface mb-3">Diseño Personalizado</h3>
-<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed mb-6">
-              Una experiencia digital diseñada milimétricamente alrededor de tu marca, tus valores diferenciales y tus metas comerciales más ambiciosas.
-            </p>
-</div>
-<button class="inline-flex items-center gap-2 font-headline-sm text-[13px] text-primary hover:text-primary-container font-semibold transition-colors" onclick="preselectService('Diseño personalizado')">
-<span class="">Solicitar diseño a medida</span>
-<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-</button>
-</div>
 <!-- Card 5 (Featured Spanned) -->
-<div class="glass-panel p-8 rounded-xl specular-border border-secondary/30 lg:col-span-2 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 hover:border-secondary transition-all duration-300 group relative overflow-hidden">
+<div class="glass-panel p-8 rounded-xl specular-border border-secondary/30 lg:col-span-3 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 hover:border-secondary transition-all duration-300 group relative overflow-hidden">
 <div class="absolute -top-16 -right-16 w-44 h-44 bg-secondary/10 rounded-full blur-2xl pointer-events-none"></div>
 <div class="max-w-xl">
 <div class="flex items-center gap-3 mb-2">
-<span class="font-label-mono-sm text-label-mono-sm text-secondary tracking-widest">SERVICIO 05 • DIFERENCIAL EXCLUSIVO</span>
+<span class="font-label-mono-sm text-label-mono-sm text-secondary tracking-widest">SERVICIO 04 • DIFERENCIAL EXCLUSIVO</span>
 <span class="px-2 py-0.5 rounded bg-secondary/20 text-secondary font-label-mono-sm text-[10px]">IA AVANZADA</span>
 </div>
 <h3 class="font-headline-md text-headline-sm md:text-headline-md text-on-surface mb-3">Simulación de Mercado</h3>
@@ -1105,34 +1088,26 @@
 <span class="">1. ¿Qué servicios necesitas?</span>
 <span class="font-label-mono-sm text-[11px] text-on-surface-variant">Selecciona uno o varios</span>
 </label>
-<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3" id="services-selector">
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3" id="services-selector">
 <label class="service-pill cursor-pointer p-3.5 rounded-lg border border-outline-variant/40 bg-surface-container-low hover:border-primary transition-all flex items-center gap-2.5">
 <input class="rounded bg-surface-container-highest border-outline-variant text-primary focus:ring-0" name="services" type="checkbox" value="Diseño Web">
-<span class="font-body-sm text-body-sm text-on-surface">Diseño Web</span>
+<span class="flex flex-col leading-tight"><span class="font-body-sm text-body-sm text-on-surface">Diseño Web</span><span class="font-label-mono-sm text-[11px] text-on-surface-variant mt-0.5">319 €</span></span>
 </label>
 <label class="service-pill cursor-pointer p-3.5 rounded-lg border border-outline-variant/40 bg-surface-container-low hover:border-primary transition-all flex items-center gap-2.5">
 <input class="rounded bg-surface-container-highest border-outline-variant text-primary focus:ring-0" name="services" type="checkbox" value="Rediseño Web">
-<span class="font-body-sm text-body-sm text-on-surface">Rediseño Web</span>
+<span class="flex flex-col leading-tight"><span class="font-body-sm text-body-sm text-on-surface">Rediseño Web</span><span class="font-label-mono-sm text-[11px] text-on-surface-variant mt-0.5">269 €</span></span>
 </label>
 <label class="service-pill cursor-pointer p-3.5 rounded-lg border border-outline-variant/40 bg-surface-container-low hover:border-secondary transition-all flex items-center gap-2.5">
 <input class="rounded bg-surface-container-highest border-outline-variant text-secondary focus:ring-0" name="services" type="checkbox" value="SEO">
-<span class="font-body-sm text-body-sm text-on-surface">SEO</span>
+<span class="flex flex-col leading-tight"><span class="font-body-sm text-body-sm text-on-surface">SEO</span><span class="font-label-mono-sm text-[11px] text-on-surface-variant mt-0.5">140 €/mes</span></span>
 </label>
 <label class="service-pill cursor-pointer p-3.5 rounded-lg border border-primary-container/60 bg-primary-container/10 hover:border-primary-container transition-all flex items-center gap-2.5">
 <input class="rounded bg-surface-container-highest border-outline-variant text-primary-container focus:ring-0" name="services" type="checkbox" value="Pack Enterprise">
-<span class="font-body-sm text-body-sm font-semibold text-primary">Pack Enterprise</span>
+<span class="flex flex-col leading-tight"><span class="font-body-sm text-body-sm font-semibold text-primary">Pack Enterprise</span><span class="font-label-mono-sm text-[11px] text-on-surface-variant mt-0.5">899 €</span></span>
 </label>
 <label class="service-pill cursor-pointer p-3.5 rounded-lg border border-secondary/50 bg-secondary/10 hover:border-secondary transition-all flex items-center gap-2.5">
 <input class="rounded bg-surface-container-highest border-outline-variant text-secondary focus:ring-0" name="services" type="checkbox" value="Simulación de mercado">
-<span class="font-body-sm text-body-sm text-secondary">Simulación IA</span>
-</label>
-<label class="service-pill cursor-pointer p-3.5 rounded-lg border border-outline-variant/40 bg-surface-container-low hover:border-primary transition-all flex items-center gap-2.5">
-<input class="rounded bg-surface-container-highest border-outline-variant text-primary focus:ring-0" name="services" type="checkbox" value="Diseño personalizado">
-<span class="font-body-sm text-body-sm text-on-surface">Diseño a medida</span>
-</label>
-<label class="service-pill cursor-pointer p-3.5 rounded-lg border border-outline-variant/40 bg-surface-container-low hover:border-primary transition-all flex items-center gap-2.5 col-span-2 sm:col-span-1">
-<input class="rounded bg-surface-container-highest border-outline-variant text-primary focus:ring-0" name="services" type="checkbox" value="Otro / Asesoramiento">
-<span class="font-body-sm text-body-sm text-on-surface">Asesoramiento</span>
+<span class="flex flex-col leading-tight"><span class="font-body-sm text-body-sm text-secondary">Simulación IA</span><span class="font-label-mono-sm text-[11px] text-on-surface-variant mt-0.5">199 €</span></span>
 </label>
 </div>
 </div>
@@ -1165,45 +1140,15 @@
 <input class="hidden w-full bg-surface-container-low border border-outline-variant/40 rounded-lg p-3 text-body-sm text-on-surface focus:border-primary-container focus:ring-0" id="web_url_field" name="current_url" placeholder="https://tuwebactual.com" type="url">
 </div>
 </div>
-<!-- Step 3: Presupuesto aproximado -->
-<div>
-<label class="block font-headline-sm text-[15px] text-on-surface mb-3">4. Presupuesto estimado de inversión</label>
-<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2.5">
-<label class="cursor-pointer p-3 rounded-lg border border-outline-variant/30 text-center hover:border-primary transition-all has-[:checked]:border-primary-container has-[:checked]:bg-primary-container/10">
-<input class="sr-only" name="budget" type="radio" value="Menos de 300 €">
-<span class="font-label-mono-sm text-[12px] block text-on-surface">&lt; 300 €</span>
-</label>
-<label class="cursor-pointer p-3 rounded-lg border border-outline-variant/30 text-center hover:border-primary transition-all has-[:checked]:border-primary-container has-[:checked]:bg-primary-container/10">
-<input checked="" class="sr-only" name="budget" type="radio" value="300 – 500 €">
-<span class="font-label-mono-sm text-[12px] block text-on-surface">300 – 500 €</span>
-</label>
-<label class="cursor-pointer p-3 rounded-lg border border-outline-variant/30 text-center hover:border-primary transition-all has-[:checked]:border-primary-container has-[:checked]:bg-primary-container/10">
-<input class="sr-only" name="budget" type="radio" value="500 – 900 €">
-<span class="font-label-mono-sm text-[12px] block text-on-surface">500 – 900 €</span>
-</label>
-<label class="cursor-pointer p-3 rounded-lg border border-outline-variant/30 text-center hover:border-primary transition-all has-[:checked]:border-primary-container has-[:checked]:bg-primary-container/10">
-<input class="sr-only" name="budget" type="radio" value="900 – 1.500 €">
-<span class="font-label-mono-sm text-[12px] block text-on-surface">900 – 1.500 €</span>
-</label>
-<label class="cursor-pointer p-3 rounded-lg border border-outline-variant/30 text-center hover:border-primary transition-all has-[:checked]:border-primary-container has-[:checked]:bg-primary-container/10">
-<input class="sr-only" name="budget" type="radio" value="Más de 1.500 €">
-<span class="font-label-mono-sm text-[12px] block text-on-surface">&gt; 1.500 €</span>
-</label>
-<label class="cursor-pointer p-3 rounded-lg border border-outline-variant/30 text-center hover:border-primary transition-all has-[:checked]:border-primary-container has-[:checked]:bg-primary-container/10">
-<input class="sr-only" name="budget" type="radio" value="Prefiero hablarlo">
-<span class="font-label-mono-sm text-[12px] block text-on-surface">A definir</span>
-</label>
-</div>
-</div>
 <!-- Step 4: Descripción del proyecto -->
 <div>
-<label class="block font-headline-sm text-[15px] text-on-surface mb-2">5. Cuéntanos qué quieres conseguir</label>
+<label class="block font-headline-sm text-[15px] text-on-surface mb-2">4. Cuéntanos qué quieres conseguir</label>
 <p class="font-body-sm text-body-sm text-on-surface-variant mb-2">Indícanos problemas actuales, metas prioritarias o aspectos clave que te gustaría mejorar.</p>
 <textarea class="w-full bg-surface-container-low border border-outline-variant/40 rounded-lg p-3.5 text-body-md text-on-surface focus:border-primary-container focus:ring-0" id="project-description" name="description" placeholder="Describe brevemente tus objetivos comerciales, plazos esperados o cualquier detalle técnico relevante..." required="" rows="4"></textarea>
 </div>
 <!-- Step 5: Datos de Contacto -->
 <div>
-<label class="block font-headline-sm text-[15px] text-on-surface mb-3">6. Datos de contacto profesional</label>
+<label class="block font-headline-sm text-[15px] text-on-surface mb-3">5. Datos de contacto profesional</label>
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 <div>
 <input class="w-full bg-surface-container-low border border-outline-variant/40 rounded-lg p-3 text-body-sm text-on-surface focus:border-primary-container focus:ring-0" name="name" placeholder="Nombre completo *" required="" type="text">
@@ -1814,6 +1759,22 @@
 <li class="info"><span class="material-symbols-outlined">info</span><span><b>Delegado de Protección de Datos:</b> normalmente no es obligatorio para una agencia de este tamaño, salvo tratamientos a gran escala.</span></li>
 </ul>
 </div>
+
+</div>
+
+<!-- Pie -->
+<div class="p-4 sm:px-8 border-t border-outline-variant/30 bg-surface-container-low/90 flex items-center justify-between gap-3 flex-wrap">
+<span class="font-label-mono-sm text-[11px] text-on-surface-variant flex items-center gap-1.5"><span class="material-symbols-outlined text-[16px] text-secondary">verified</span>Última revisión: septiembre 2026</span>
+<div class="flex gap-2">
+<button type="button" onclick="closeLegalModal()" class="px-4 py-2 rounded bg-surface-container-high border border-outline-variant/50 text-on-surface font-headline-sm text-[13px] cursor-pointer hover:border-primary transition-colors">Cerrar</button>
+<a href="#contacto" onclick="closeLegalModal()" class="px-4 py-2 rounded bg-primary-container text-on-primary-container font-headline-sm text-[13px] font-bold flex items-center gap-1.5 cursor-pointer">Solicitar propuesta<span class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
+</div>
+</div>
+
+</div>
+</div>
+
+</body></html>
 
 </div>
 
